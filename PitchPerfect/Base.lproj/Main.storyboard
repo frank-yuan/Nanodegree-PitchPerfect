@@ -33,12 +33,20 @@
                                     <action selector="onStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MzZ-8H-7AV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayC-wz-EPW" userLabel="recordLabel">
+                                <rect key="frame" x="166" y="403" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ndc-R2-xu5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LPv-fF-1xB"/>
                             <constraint firstItem="p1P-QA-1NF" firstAttribute="centerX" secondItem="Ndc-R2-xu5" secondAttribute="centerX" id="SDs-e9-yVH"/>
+                            <constraint firstItem="ayC-wz-EPW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V4p-NB-JRJ"/>
                             <constraint firstItem="Ndc-R2-xu5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cBe-QY-xZJ"/>
+                            <constraint firstItem="ayC-wz-EPW" firstAttribute="top" secondItem="Ndc-R2-xu5" secondAttribute="bottom" constant="20" id="fdr-ow-0kc"/>
                             <constraint firstItem="p1P-QA-1NF" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" multiplier="0.8" id="nq3-Zi-zp3"/>
                         </constraints>
                     </view>
@@ -46,6 +54,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="recordBtn" destination="Ndc-R2-xu5" id="beT-R2-ko6"/>
+                        <outlet property="recordLabel" destination="ayC-wz-EPW" id="fd5-Q4-5sM"/>
                         <outlet property="stopBtn" destination="p1P-QA-1NF" id="X44-q2-CeZ"/>
                         <segue destination="hUd-mZ-YqF" kind="show" identifier="showPlayView" id="yUC-OK-GKZ"/>
                     </connections>
@@ -100,6 +109,9 @@
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Li-ML-5SZ" userLabel="fastBtn">
                                                 <rect key="frame" x="172" y="0.0" width="172" height="151"/>
                                                 <state key="normal" image="fast"/>
+                                                <connections>
+                                                    <action selector="onPlay:" destination="hUd-mZ-YqF" eventType="touchUpInside" id="tZK-Tx-7uz"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -109,23 +121,35 @@
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLF-ae-sFP" userLabel="chipmunkBtn">
                                                 <rect key="frame" x="0.0" y="0.0" width="172" height="151"/>
                                                 <state key="normal" image="chipmunk"/>
+                                                <connections>
+                                                    <action selector="onPlay:" destination="hUd-mZ-YqF" eventType="touchUpInside" id="d8c-BK-KnQ"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyk-JA-84P" userLabel="vaderBtn">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyk-JA-84P" userLabel="vaderBtn">
                                                 <rect key="frame" x="172" y="0.0" width="172" height="151"/>
                                                 <state key="normal" image="darthvader"/>
+                                                <connections>
+                                                    <action selector="onPlay:" destination="hUd-mZ-YqF" eventType="touchUpInside" id="dUc-oB-EtI"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="u6g-6Q-Lpb">
                                         <rect key="frame" x="0.0" y="302" width="343" height="151"/>
                                         <subviews>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blx-fr-igd" userLabel="echoBtn">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blx-fr-igd" userLabel="echoBtn">
                                                 <rect key="frame" x="0.0" y="0.0" width="172" height="151"/>
                                                 <state key="normal" image="echo"/>
+                                                <connections>
+                                                    <action selector="onPlay:" destination="hUd-mZ-YqF" eventType="touchUpInside" id="HG9-7P-51T"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaV-bE-Ggn" userLabel="reverbBtn">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaV-bE-Ggn" userLabel="reverbBtn">
                                                 <rect key="frame" x="172" y="0.0" width="172" height="151"/>
                                                 <state key="normal" image="reverb"/>
+                                                <connections>
+                                                    <action selector="onPlay:" destination="hUd-mZ-YqF" eventType="touchUpInside" id="2n2-GF-5v7"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -153,18 +177,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="chipmunkBtn" destination="kLF-ae-sFP" id="qtF-SG-g4k"/>
                         <outlet property="chipmunkButton" destination="kLF-ae-sFP" id="F7s-Qp-djO"/>
-                        <outlet property="echoBtn" destination="blx-fr-igd" id="Z9B-H1-eNq"/>
                         <outlet property="echoButton" destination="blx-fr-igd" id="FDw-ne-WgU"/>
-                        <outlet property="fastBtn" destination="1Li-ML-5SZ" id="xwV-dD-G0l"/>
                         <outlet property="rabbitButton" destination="1Li-ML-5SZ" id="v4A-ut-K2d"/>
-                        <outlet property="reverbBtn" destination="JaV-bE-Ggn" id="wpu-jp-ZXa"/>
                         <outlet property="reverbButton" destination="JaV-bE-Ggn" id="Xp0-9D-6g8"/>
-                        <outlet property="slowBtn" destination="moX-lb-tg5" id="KuU-Xj-5nA"/>
                         <outlet property="snailButton" destination="moX-lb-tg5" id="CCu-Yr-jmb"/>
                         <outlet property="stopButton" destination="CYc-kr-3eL" id="26h-Fb-uxL"/>
-                        <outlet property="vaderBtn" destination="Cyk-JA-84P" id="5rF-7a-htq"/>
                         <outlet property="vaderButton" destination="Cyk-JA-84P" id="Ctd-We-DAz"/>
                     </connections>
                 </viewController>

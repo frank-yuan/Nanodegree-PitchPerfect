@@ -38,6 +38,7 @@ class PlaySoundsViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupAudio()
         configureUI(.NotPlaying)
     }
     @IBAction func onPlay(sender: AnyObject) {

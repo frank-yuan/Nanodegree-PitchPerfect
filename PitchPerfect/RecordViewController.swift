@@ -13,6 +13,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     // MARK: Properties
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var stopBtn: UIButton!
+    @IBOutlet weak var recordLabel: UILabel!
     
     var audioRecorder:AVAudioRecorder!
     
@@ -22,7 +23,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        stopBtn.enabled = false
+        configureUI(false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,8 +49,8 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     
     // MARK: Actions
     @IBAction func onRecord(sender: AnyObject) {
-        stopBtn.enabled = true
-        recordBtn.enabled = false
+
+        configureUI(true)
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
@@ -68,12 +69,21 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func onStop(sender: AnyObject) {
-        stopBtn.enabled = false
-        recordBtn.enabled = true
+        configureUI(false)
         
         audioRecorder.stop()
         let session = AVAudioSession.sharedInstance()
         try! session.setActive(false)
+    }
+    
+    // MARK: Helpers
+    func configureUI(recording:Bool)
+    {
+        stopBtn.enabled = recording
+        recordBtn.enabled = !recording
+
+        recordLabel.text = NSLocalizedString(recording ? "Recording" : "TapToRecord", comment: "")
+
     }
     
     

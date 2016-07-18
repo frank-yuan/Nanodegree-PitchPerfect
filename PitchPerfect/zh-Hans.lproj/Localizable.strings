@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  PitchPerfect
+
+  Created by Xuan Yuan (Frank) on 7/19/16.
+  Copyright © 2016 frank-yuan. All rights reserved.
+*/
+"TapToRecord" = "点击开始录音";
+"Recording" = "正在录音";
