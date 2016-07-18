@@ -12,6 +12,7 @@ import AVFoundation
 
 class PlaySoundsViewController : UIViewController {
     
+    // MARK:Properties
     @IBOutlet weak var snailButton: UIButton!
     @IBOutlet weak var rabbitButton: UIButton!
     @IBOutlet weak var chipmunkButton: UIButton!
@@ -26,7 +27,7 @@ class PlaySoundsViewController : UIViewController {
     var audioEngine: AVAudioEngine!
     var audioPlayerNode: AVAudioPlayerNode!
     var stopTimer : NSTimer!
-    
+
     enum PlayType: Int {
         case Slow = 0,
         Fast,
@@ -36,11 +37,14 @@ class PlaySoundsViewController : UIViewController {
         Reverb
     }
     
+    // MARK: UIViewController overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAudio()
         configureUI(.NotPlaying)
     }
+    
+    // MARK: IBActions
     @IBAction func onPlay(sender: AnyObject) {
         switch (PlayType(rawValue: sender.tag)!)
         {

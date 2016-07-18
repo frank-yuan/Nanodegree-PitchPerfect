@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Record View Controller-->
@@ -27,14 +26,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1P-QA-1NF" userLabel="StopBtn">
-                                <rect key="frame" x="162" y="483" width="50" height="50"/>
+                                <rect key="frame" x="162" y="433" width="50" height="50"/>
                                 <state key="normal" image="stop"/>
                                 <connections>
                                     <action selector="onStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MzZ-8H-7AV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayC-wz-EPW" userLabel="recordLabel">
-                                <rect key="frame" x="166" y="403" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayC-wz-EPW" userLabel="recordLabel">
+                                <rect key="frame" x="187" y="403" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -42,12 +41,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="p1P-QA-1NF" firstAttribute="centerX" secondItem="ayC-wz-EPW" secondAttribute="centerX" id="Heg-0S-Hce"/>
                             <constraint firstItem="Ndc-R2-xu5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LPv-fF-1xB"/>
-                            <constraint firstItem="p1P-QA-1NF" firstAttribute="centerX" secondItem="Ndc-R2-xu5" secondAttribute="centerX" id="SDs-e9-yVH"/>
+                            <constraint firstItem="p1P-QA-1NF" firstAttribute="top" secondItem="ayC-wz-EPW" secondAttribute="bottom" constant="30" id="UXg-8e-TQz"/>
                             <constraint firstItem="ayC-wz-EPW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V4p-NB-JRJ"/>
                             <constraint firstItem="Ndc-R2-xu5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cBe-QY-xZJ"/>
                             <constraint firstItem="ayC-wz-EPW" firstAttribute="top" secondItem="Ndc-R2-xu5" secondAttribute="bottom" constant="20" id="fdr-ow-0kc"/>
-                            <constraint firstItem="p1P-QA-1NF" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" multiplier="0.8" id="nq3-Zi-zp3"/>
+                            <constraint firstItem="ayC-wz-EPW" firstAttribute="top" secondItem="Ndc-R2-xu5" secondAttribute="bottom" constant="20" id="s81-la-wzq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="44k-th-sRX"/>
