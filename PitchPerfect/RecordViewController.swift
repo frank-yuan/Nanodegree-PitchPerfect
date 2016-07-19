@@ -25,11 +25,6 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         configureUI(false)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == kPlayViewSegueName)
@@ -42,8 +37,16 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     // MARK: AVAudioRecorderDelegate overrides
 
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
-        print(recorder.url)
-        self.performSegueWithIdentifier(kPlayViewSegueName, sender: recorder.url)
+        if (flag)
+        {
+            self.performSegueWithIdentifier(kPlayViewSegueName, sender: recorder.url)
+        }
+        else
+        {
+            let alert = UIAlertController(title: NSLocalizedString("AlertTitle", comment: ""), message:NSLocalizedString("RecordAlert", comment: ""), preferredStyle:UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OKButton", comment: ""), style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     

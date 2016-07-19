@@ -7,3 +7,6 @@
 */
 "TapToRecord" = "Tap to record";
 "Recording" = "Recording in process";
+"AlertTitle" = "Alert";
+"RecordAlert" = "Recording Failed";
+"OKButton" = "OK";

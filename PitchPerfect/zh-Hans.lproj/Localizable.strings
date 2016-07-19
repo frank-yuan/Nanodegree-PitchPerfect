@@ -7,3 +7,6 @@
 */
 "TapToRecord" = "点击开始录音";
 "Recording" = "正在录音";
+"AlertTitle" = "警告";
+"RecordAlert" = "录制失败";
+"OKButton" = "确定";
